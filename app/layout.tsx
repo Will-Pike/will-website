@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import "./globals.css";
+import ClientLayout from "@/components/ClientLayout";
 
 const lora = Lora({
   subsets: ["latin"],
   display: "swap",
 });
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Grady Karp | Executive Technical Leadership",
@@ -22,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lora.className} flex min-h-screen flex-col bg-white text-neutral-900 antialiased`}>
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body
+        className={`${lora.className} flex min-h-screen flex-col bg-white text-neutral-900 antialiased`}
+      >
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
