@@ -22,7 +22,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid password" }, { status: 401 });
     }
 
-    const token = generateToken();
+    const token = await generateToken();
     await setSessionCookie(token);
 
     return NextResponse.json({ success: true });

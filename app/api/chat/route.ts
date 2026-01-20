@@ -7,8 +7,6 @@ import {
 } from "ai";
 import { buildSystemPrompt } from "@/lib/profile-context";
 
-export const runtime = "edge";
-
 export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
@@ -17,7 +15,7 @@ export async function POST(req: Request) {
       return new Response("Invalid request body", { status: 400 });
     }
 
-    const systemPrompt = buildSystemPrompt();
+    const systemPrompt = await buildSystemPrompt();
 
     // Convert UIMessage format (parts array) to ModelMessage format (content)
     const modelMessages = await convertToModelMessages(messages as UIMessage[]);

@@ -1,13 +1,22 @@
-import { gradyProfile } from "@/data/grady-profile";
+import { staticProfile } from "@/data/static-profile";
+import { getExperiences } from "./profile-writer";
 
-export function buildSystemPrompt(): string {
-  const { name, title, summary, experience, skills, education } = gradyProfile;
+export async function buildSystemPrompt(): Promise<string> {
+  const { name, title, summary, skills, education } = staticProfile;
+
+  // Fetch experiences from Blob storage at runtime
+  const experience = await getExperiences();
 
   const experienceContext = experience
     .map((exp) => {
       const contextDetails = exp.aiContext
         .map((ctx, idx) => {
-          const ctxTitle = "title" in ctx && ctx.title ? ` (${ctx.title})` : exp.aiContext.length > 1 ? ` ${idx + 1}` : "";
+          const ctxTitle =
+            "title" in ctx && ctx.title
+              ? ` (${ctx.title})`
+              : exp.aiContext.length > 1
+                ? ` ${idx + 1}`
+                : "";
           return `
 Context${ctxTitle}:
 - Situation: ${ctx.situation}

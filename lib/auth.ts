@@ -1,15 +1,24 @@
 import { cookies } from "next/headers";
-import crypto from "crypto";
+import { SignJWT, jwtVerify } from "jose";
 
 const COOKIE_NAME = "admin_session";
-const TOKEN_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours
+const TOKEN_EXPIRY_SECONDS = 24 * 60 * 60; // 24 hours
 
-// In-memory token store (simple approach for single-user admin)
-const validTokens: Map<string, number> = new Map();
+function getJwtSecret(): Uint8Array {
+  const secret = process.env.JWT_SECRET;
+  if (!secret || secret.length < 32) {
+    throw new Error("JWT_SECRET must be at least 32 characters");
+  }
+  return new TextEncoder().encode(secret);
+}
 
-export function generateToken(): string {
-  const token = crypto.randomBytes(32).toString("hex");
-  validTokens.set(token, Date.now() + TOKEN_EXPIRY);
+export async function generateToken(): Promise<string> {
+  const token = await new SignJWT({ admin: true })
+    .setProtectedHeader({ alg: "HS256" })
+    .setExpirationTime(`${TOKEN_EXPIRY_SECONDS}s`)
+    .setIssuedAt()
+    .sign(getJwtSecret());
+
   return token;
 }
 
@@ -28,13 +37,12 @@ export async function validateSession(): Promise<boolean> {
 
   if (!token) return false;
 
-  const expiry = validTokens.get(token);
-  if (!expiry || Date.now() > expiry) {
-    validTokens.delete(token);
+  try {
+    await jwtVerify(token, getJwtSecret());
+    return true;
+  } catch {
     return false;
   }
-
-  return true;
 }
 
 export async function setSessionCookie(token: string): Promise<void> {
@@ -43,16 +51,12 @@ export async function setSessionCookie(token: string): Promise<void> {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",
-    maxAge: TOKEN_EXPIRY / 1000,
+    maxAge: TOKEN_EXPIRY_SECONDS,
     path: "/",
   });
 }
 
 export async function clearSession(): Promise<void> {
   const cookieStore = await cookies();
-  const token = cookieStore.get(COOKIE_NAME)?.value;
-  if (token) {
-    validTokens.delete(token);
-  }
   cookieStore.delete(COOKIE_NAME);
 }
