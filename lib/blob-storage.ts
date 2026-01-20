@@ -1,18 +1,11 @@
-import { put } from "@vercel/blob";
+import { put, list } from "@vercel/blob";
 import type { Experience } from "@/types/experience";
 
 const EXPERIENCES_BLOB_PATH = "profile/experiences.json";
 
 // In-memory cache with TTL
-let experiencesCache: { data: Experience[]; timestamp: number } | null = null;
+let experiencesCache: { data: Experience[]; url: string; timestamp: number } | null = null;
 const CACHE_TTL_MS = 60 * 1000; // 60 seconds
-
-function getBlobUrl(): string {
-  const baseUrl = process.env.BLOB_READ_WRITE_TOKEN
-    ? `https://${process.env.VERCEL_BLOB_STORE_ID}.public.blob.vercel-storage.com`
-    : "";
-  return `${baseUrl}/${EXPERIENCES_BLOB_PATH}`;
-}
 
 export async function getExperiencesFromBlob(): Promise<Experience[] | null> {
   // Check cache first
@@ -24,18 +17,31 @@ export async function getExperiencesFromBlob(): Promise<Experience[] | null> {
   }
 
   try {
-    const blobUrl = getBlobUrl();
-    const response = await fetch(blobUrl, { cache: "no-store" });
+    // List blobs to find our experiences file
+    const { blobs } = await list({ prefix: "profile/" });
+    const experiencesBlob = blobs.find((b) =>
+      b.pathname === EXPERIENCES_BLOB_PATH
+    );
+
+    if (!experiencesBlob) {
+      // Blob doesn't exist yet
+      return null;
+    }
+
+    const response = await fetch(experiencesBlob.url, { cache: "no-store" });
 
     if (!response.ok) {
-      // Blob doesn't exist yet
       return null;
     }
 
     const experiences = (await response.json()) as Experience[];
 
     // Update cache
-    experiencesCache = { data: experiences, timestamp: Date.now() };
+    experiencesCache = {
+      data: experiences,
+      url: experiencesBlob.url,
+      timestamp: Date.now(),
+    };
 
     return experiences;
   } catch (error) {
@@ -46,22 +52,31 @@ export async function getExperiencesFromBlob(): Promise<Experience[] | null> {
 
 export async function saveExperiencesToBlob(
   experiences: Experience[]
-): Promise<void> {
-  await put(EXPERIENCES_BLOB_PATH, JSON.stringify(experiences, null, 2), {
-    access: "public",
-    contentType: "application/json",
-    addRandomSuffix: false,
-  });
+): Promise<string> {
+  const { url } = await put(
+    EXPERIENCES_BLOB_PATH,
+    JSON.stringify(experiences, null, 2),
+    {
+      access: "public",
+      contentType: "application/json",
+      addRandomSuffix: false,
+    }
+  );
 
-  // Invalidate cache
-  experiencesCache = null;
+  // Update cache with new data
+  experiencesCache = {
+    data: experiences,
+    url,
+    timestamp: Date.now(),
+  };
+
+  return url;
 }
 
 export async function experiencesBlobExists(): Promise<boolean> {
   try {
-    const blobUrl = getBlobUrl();
-    const response = await fetch(blobUrl, { method: "HEAD" });
-    return response.ok;
+    const { blobs } = await list({ prefix: "profile/" });
+    return blobs.some((b) => b.pathname === EXPERIENCES_BLOB_PATH);
   } catch {
     return false;
   }
