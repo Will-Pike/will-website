@@ -24,7 +24,8 @@ export async function getExperiencesFromBlob(): Promise<Experience[] | null> {
 
   try {
     // List blobs to find our experiences file
-    const { blobs } = await list({ prefix: "profile/" });
+    const token = process.env.BLOB_READ_WRITE_TOKEN;
+    const { blobs } = await list({ prefix: "profile/", token });
     const experiencesBlob = blobs.find((b) =>
       b.pathname === EXPERIENCES_BLOB_PATH
     );
@@ -59,6 +60,13 @@ export async function getExperiencesFromBlob(): Promise<Experience[] | null> {
 export async function saveExperiencesToBlob(
   experiences: Experience[]
 ): Promise<string> {
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  if (!token) {
+    throw new Error("BLOB_READ_WRITE_TOKEN is not configured");
+  }
+
+  console.log("Saving experiences to blob, count:", experiences.length);
+
   const { url } = await put(
     EXPERIENCES_BLOB_PATH,
     JSON.stringify(experiences, null, 2),
@@ -66,6 +74,7 @@ export async function saveExperiencesToBlob(
       access: "public",
       contentType: "application/json",
       addRandomSuffix: false,
+      token, // Explicitly pass token
     }
   );
 
@@ -81,7 +90,8 @@ export async function saveExperiencesToBlob(
 
 export async function experiencesBlobExists(): Promise<boolean> {
   try {
-    const { blobs } = await list({ prefix: "profile/" });
+    const token = process.env.BLOB_READ_WRITE_TOKEN;
+    const { blobs } = await list({ prefix: "profile/", token });
     return blobs.some((b) => b.pathname === EXPERIENCES_BLOB_PATH);
   } catch {
     return false;
