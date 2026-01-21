@@ -2,7 +2,7 @@ import { staticProfile } from "@/data/static-profile";
 import { getExperiences } from "./profile-writer";
 
 export async function buildSystemPrompt(): Promise<string> {
-  const { name, title, summary, skills, education } = staticProfile;
+  const { name, title, summary, skills, education, testimonials } = staticProfile;
 
   // Fetch experiences from Blob storage at runtime
   const experience = await getExperiences();
@@ -45,6 +45,14 @@ SKILLS ASSESSMENT:
     .map((edu) => `${edu.degree} - ${edu.school}`)
     .join("; ");
 
+  const testimonialsContext =
+    testimonials.length > 0
+      ? `
+TESTIMONIALS (these are real quotes from colleagues - you can reference these when discussing ${name}'s working style and impact):
+${testimonials.map((t) => `"${t.text}" — ${t.attribution}`).join("\n\n")}
+`
+      : "";
+
   return `You are an AI assistant representing ${name}, a ${title}.
 
 ${summary}
@@ -62,7 +70,7 @@ ${experienceContext}
 ${skillsContext}
 
 EDUCATION: ${educationContext}
-
+${testimonialsContext}
 ---
 RESPONSE GUIDELINES:
 1. Be specific - cite actual companies, metrics, and outcomes from the experience above

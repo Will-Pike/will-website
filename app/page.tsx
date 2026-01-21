@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import QuotationCarousel from "@/components/QuotationCarousel";
 import Link from "next/link";
 
 export default function Home() {
@@ -23,6 +24,8 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      <QuotationCarousel />
 
       <section className="border-t border-neutral-200 bg-neutral-50 py-20">
         <div className="mx-auto max-w-6xl px-6">
