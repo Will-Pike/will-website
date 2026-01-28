@@ -58,7 +58,7 @@ export default function AIChat({ isOpen, onClose }: AIChatProps) {
     e.preventDefault();
     if (!jobDescription.trim() || isLoading) return;
 
-    const prompt = `Please assess Grady's fit for the following role. Be honest about both strengths and potential gaps. Consider the job requirements and how they align with Grady's experience, skills, and career trajectory.
+    const prompt = `Please assess Will's fit for the following role. Be honest about both strengths and potential gaps. Consider the job requirements and how they align with Will's experience, skills, and career trajectory.
 
 Job Description:
 ${jobDescription}`;
@@ -83,11 +83,11 @@ ${jobDescription}`;
         <div className="flex items-center justify-between p-4 border-b border-neutral-200">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-white font-semibold">
-              GK
+              WP
             </div>
             <div>
               <p className="text-neutral-900 font-medium">
-                Ask AI About Grady
+                Ask AI About Will
               </p>
               <p className="text-xs text-neutral-500 flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -164,7 +164,7 @@ ${jobDescription}`;
                     What would you like to know?
                   </h3>
                   <p className="text-neutral-500 text-sm mb-6 max-w-md">
-                    Ask about Grady&apos;s experience, skills, or fit for your role.
+                    Ask about Will&apos;s experience, skills, or fit for your role.
                     Get honest, detailed answers.
                   </p>
                   <div className="w-full max-w-md space-y-2">
@@ -261,7 +261,7 @@ ${jobDescription}`;
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask a question about Grady..."
+                  placeholder="Ask a question about Will..."
                   disabled={isLoading}
                   className="flex-1 bg-neutral-50 rounded-xl px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 border border-neutral-200 focus:border-neutral-400 focus:outline-none transition-colors disabled:opacity-50"
                 />
@@ -308,11 +308,11 @@ ${jobDescription}`;
                   />
                 </svg>
                 <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                  Assess Grady&apos;s Fit for Your Role
+                  Assess Will&apos;s Fit for Your Role
                 </h3>
                 <p className="text-neutral-500 text-sm">
                   Paste a job description below to get an honest assessment of how
-                  Grady&apos;s experience aligns with your requirements.
+                  Will&apos;s experience aligns with your requirements.
                 </p>
               </div>
 
@@ -368,7 +368,7 @@ ${jobDescription}`;
 
               <p className="mt-4 text-xs text-neutral-400 text-center">
                 The AI will provide an honest assessment including both strengths
-                and potential gaps based on Grady&apos;s actual experience.
+                and potential gaps based on Will&apos;s actual experience.
               </p>
             </div>
           </div>
