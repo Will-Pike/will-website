@@ -1,0 +1,84 @@
+William Pike
+Austin, TX
+m: 512.775.9875
+wilpike@gmail.com
+LinkedIn
+
+Professional Summary
+Vision-driven change agent with career-long record of business analysis, software development, and product management success for leading organizations
+
+Proven talent for aligning business strategy and objectives with established software development and product management paradigms to achieve maximum operational impacts with minimum resource expenditures. Innovative, results-focused leader well-versed in all aspects of software product management, product ownership, and the software development life cycle. Proficient in data visualization, product viability analysis, metrics-driven decision making, Agile principles, common software methodologies, and multiple languages and frameworks. Specific experience integrating payment solutions for SaaS products. Exceptionally dedicated professional with keen interpersonal, communication, organizational, and analytical skills. Thrive in dynamic, fast-paced, and diverse environments that demand excellence and reward ingenuity. 
+
+ Core Competencies
+Creative Problem Solving
+Payments Integration
+Software Product Management 
+Software Development
+Relationship Building
+Critical Thinking
+Leadership 
+Collaboration 
+Decision Making 
+
+
+Professional Experience
+
+TriggerPoint Media, Austin, TX, December 2022 to Present
+SOFTWARE PRODUCT MANAGER
+Manage Product Strategy for 2-sided marketplace platform for digital OOH marketing (SavvyDisplays)
+Own end-to-end product development and deliver roadmaps for upcoming product releases; garner a rich understanding of user personas to inform acceptance criteria for product features.
+Launch a new product to allow businesses to monetize their digital marketing strategies
+Partner with senior leadership and stakeholders to define business needs and product requirements; collaborate cross-functionally to complete project milestones.
+Instruct teams in product methodologies to achieve alignment with industry standards; coach team members with a focus on continuous improvement and professional development.
+Consolidate product operations tools to maximize efficiency between teams; delegate tasks based on team members’ specific strengths and abilities.
+Perform in-depth data analysis to weigh financial impacts of proposed products and solutions; relay actionable insights drawn from industry experience.
+Balance multiple projects and priorities simultaneously in a dynamic, fast-paced environment while meeting tight deadlines and strict quality standards.
+Facilitated the merger between software platforms developed by two companies following an acquisition;  leveraged technical acumen and problem-solving skills to optimize workflows and efficiency. 
+Managed software conversion, increasing active locations from 800 to 3000+
+
+Digital Touch Systems, Austin, TX, September 2015 to December 2022
+SOFTWARE PRODUCT MANAGER
+Launched new software features for the entire software suite of SaaS digital signage and menu applications. Replace with: Launched a new digital signage platform that was deployed at over 800 locations consisting of over 10,000 displays.
+Launched a digital menu and ordering system that is in use by restaurants such as Subway.
+Increased software revenue 100x ($30,000 to $3,000,000 a year).
+Spearheaded comprehensive testing and results evaluation to ensure quality and proper functionality of three proprietary software products.
+Generated informative data visualizations to inform product decisions and plan the development roadmap; tracked metrics to understand product impact.
+Managed and mentored the Development, Support, and Client Relation teams; led efforts to properly document internal and external training materials.
+Championed custom software solutions and delivered consultations and training to clients; onboarded new clients and created plans that aligned with scope of use.
+Administered Network and IT solutions; tested and analyzed new hardware solutions; advised prospective clients regarding hardware/software scenarios for unique circumstances.
+
+Visual Innovations, Austin, TX, November 2014 to December 2017
+PROGRAMMING ENGINEER 
+Conceptualized and created working hardware solutions for Audio-Visual installations; produced CAD drawings to diagram AV solutions.
+Programmed control systems to interact with AV hardware; designed touchscreen user interfaces to be used with AV control systems.
+
+Digital Touch Systems, Austin, TX, September 2014 to September 2015
+QA ENGINEER ASSOCIATE
+Tested new software features for quality and ease of use; utilized previous service industry experience to improve concept and functionality of digital menu ordering system.
+
+Education and Credentials
+
+AWS Certified Solutions Architect – Associate, 2025     
+Credly
+Computer Science, Computer Programming, 2007 - 2009
+Austin Community College – Austin, TX
+Mechanical Engineering, 2005 - 2007
+University of Texas at San Antonio – San Antonio, TX
+
+Additional Information 
+
+Technical Proficiencies: 
+Tools:
+JIRA, Confluence, Monday, Hubspot, Figma, Pulumi, Terraform, Raygun, Postman, Splunk, Tableau, Github
+
+Cloud:
+AWS, Azure, Google Cloud
+
+Frontend:
+HTML/CSS/JS, React, Bootstrap, Tailwind, Angular, jQuery
+
+Backend:
+NodeJS, Python, Java, PHP
+
+Database:
+MySQL, PostgreSQL, MicrosoftSQL, MongoDB

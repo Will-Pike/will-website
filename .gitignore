@@ -27,6 +27,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# api keys
+app/api/chat/api-key.txt
+
 # vercel
 .vercel
 

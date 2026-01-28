@@ -6,13 +6,13 @@ export default function Hero() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-3xl">
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl lg:text-6xl">
-            Engineering Leadership for the Modern Era
+            Product Leadership Meets Technical Excellence
           </h1>
           <p className="mb-8 text-lg text-neutral-600 md:text-xl">
-            Executive-level technical & business leader with a track record of
-            success in engineering leadership and operational excellence. I help
-            organizations build high-performing engineering teams and achieve
-            technical excellence.
+            Software Product Manager and technical leader with a proven track record
+            in SaaS development, digital platforms, and payments integration. I help
+            organizations align business strategy with technical execution to deliver
+            measurable results and drive growth.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link

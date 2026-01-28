@@ -3,7 +3,7 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, UIMessage } from "ai";
 import { useEffect, useRef, useState, useMemo } from "react";
-import { staticProfile } from "@/data/static-profile";
+import { staticProfile } from "@/data/will-static-profile";
 import ReactMarkdown from "react-markdown";
 
 function getMessageText(message: UIMessage): string {

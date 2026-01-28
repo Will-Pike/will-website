@@ -1,17 +1,16 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { staticProfile } from "@/data/static-profile";
+import { staticProfile } from "@/data/will-static-profile";
 
 const DISPLAY_DURATION_MS = 6000; // 6 seconds per quotation
 const FADE_DURATION_MS = 500;
 
 export default function QuotationCarousel() {
   const testimonials = staticProfile.testimonials;
-  const [currentIndex, setCurrentIndex] = useState(() =>
-    Math.floor(Math.random() * testimonials.length)
-  );
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const selectNextQuotation = useCallback(() => {
     if (testimonials.length <= 1) return;
@@ -30,6 +29,14 @@ export default function QuotationCarousel() {
       setIsVisible(true);
     }, FADE_DURATION_MS);
   }, [testimonials.length, currentIndex]);
+
+  // Initialize with random index after first render (client-side only)
+  useEffect(() => {
+    if (!isInitialized && testimonials.length > 0) {
+      setCurrentIndex(Math.floor(Math.random() * testimonials.length));
+      setIsInitialized(true);
+    }
+  }, [isInitialized, testimonials.length]);
 
   useEffect(() => {
     if (testimonials.length <= 1) return;

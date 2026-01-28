@@ -22,7 +22,7 @@ export default function Header({ onOpenChat }: HeaderProps) {
       <nav className="mx-auto max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-xl font-semibold text-neutral-900">
-            Grady Karp
+            William Pike
           </Link>
 
           {/* Desktop Navigation */}

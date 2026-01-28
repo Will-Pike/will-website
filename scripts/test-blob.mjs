@@ -3,13 +3,13 @@ import fs from 'fs';
 import path from 'path';
 
 // Read the profile data manually
-const profilePath = path.join(process.cwd(), 'data', 'grady-profile.ts');
+const profilePath = path.join(process.cwd(), 'data', 'will-profile.ts');
 const content = fs.readFileSync(profilePath, 'utf-8');
 const startIndex = content.indexOf('{');
 const endIndex = content.lastIndexOf('}');
 const objectStr = content.slice(startIndex, endIndex + 1);
 const fn = new Function(`return ${objectStr}`);
-const gradyProfile = fn();
+const willProfile = fn();
 
 async function test() {
   try {
@@ -21,7 +21,7 @@ async function test() {
 
     if (result.blobs.length === 0) {
       console.log('No blobs found, attempting to seed...');
-      const { url } = await put('profile/experiences.json', JSON.stringify(gradyProfile.experience, null, 2), {
+      const { url } = await put('profile/experiences.json', JSON.stringify(willProfile.experience, null, 2), {
         access: 'public',
         contentType: 'application/json',
         addRandomSuffix: false

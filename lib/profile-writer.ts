@@ -2,7 +2,7 @@ import {
   getExperiencesFromBlob,
   saveExperiencesToBlob,
 } from "./blob-storage";
-import { gradyProfile } from "@/data/grady-profile";
+import { willProfile } from "@/data/will-profile";
 import type { Experience } from "@/types/experience";
 
 export async function getExperiences(): Promise<Experience[]> {
@@ -15,13 +15,13 @@ export async function getExperiences(): Promise<Experience[]> {
     }
 
     // Blob doesn't exist yet, seed from static data
-    console.log("Seeding blob storage with experiences from grady-profile.ts");
-    await saveExperiencesToBlob(gradyProfile.experience);
-    return gradyProfile.experience;
+    console.log("Seeding blob storage with experiences from will-profile.ts");
+    await saveExperiencesToBlob(willProfile.experience);
+    return willProfile.experience;
   } catch (error) {
     console.error("Blob storage error, falling back to static data:", error);
     // Fall back to static data if blob storage fails
-    return gradyProfile.experience;
+    return willProfile.experience;
   }
 }
 

@@ -9,9 +9,9 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Grady Karp | Executive Technical Leadership",
+  title: "William Pike | Software Product Manager & Technical Leader",
   description:
-    "Executive-level technical & business leader with a track record of success in engineering leadership and operational excellence.",
+    "Vision-driven Software Product Manager with proven expertise in SaaS development, payments integration, and leading cross-functional teams through rapid growth.",
 };
 
 export default function RootLayout({

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { validateSession } from "@/lib/auth";
-import { gradyProfile } from "@/data/grady-profile";
+import { willProfile } from "@/data/will-profile";
 import { saveExperiencesToBlob, experiencesBlobExists } from "@/lib/blob-storage";
 
 export async function POST() {
@@ -18,12 +18,12 @@ export async function POST() {
       });
     }
 
-    const url = await saveExperiencesToBlob(gradyProfile.experience);
+    const url = await saveExperiencesToBlob(willProfile.experience);
 
     return NextResponse.json({
       message: "Successfully seeded experiences to blob storage",
       url,
-      count: gradyProfile.experience.length,
+      count: willProfile.experience.length,
       seeded: true,
     });
   } catch (error) {
@@ -43,12 +43,12 @@ export async function PUT() {
     }
 
     // Force overwrite
-    const url = await saveExperiencesToBlob(gradyProfile.experience);
+    const url = await saveExperiencesToBlob(willProfile.experience);
 
     return NextResponse.json({
       message: "Successfully seeded experiences to blob storage (overwrite)",
       url,
-      count: gradyProfile.experience.length,
+      count: willProfile.experience.length,
       seeded: true,
     });
   } catch (error) {

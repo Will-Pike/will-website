@@ -7,11 +7,11 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <h3 className="mb-4 text-lg font-semibold text-neutral-900">
-              Grady Karp
+              William Pike
             </h3>
             <p className="text-neutral-600">
-              Executive-level technical & business leader helping organizations
-              achieve engineering excellence.
+              Software Product Manager & technical leader helping organizations
+              build successful SaaS products and scale digital platforms.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://www.linkedin.com/in/gradykarp/"
+                  href="https://www.linkedin.com/in/will-pike-6b97a413a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-600 transition-colors hover:text-neutral-900"
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-neutral-200 pt-8 text-center text-sm text-neutral-500">
-          <p>&copy; {new Date().getFullYear()} Grady Karp. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} William Pike. All rights reserved.</p>
         </div>
       </div>
     </footer>

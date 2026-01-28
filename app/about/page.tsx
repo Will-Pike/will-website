@@ -1,51 +1,66 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About | Grady Karp",
+  title: "About | William Pike",
   description:
-    "Learn about Grady Karp's background, experience, and expertise in engineering leadership.",
+    "Learn about William Pike's background, experience, and expertise in software product management and technical leadership.",
 };
 
 export default function AboutPage() {
   const experience = [
     {
-      role: "Engineering Leader",
-      company: "Indeed.com",
-      location: "Seattle, Washington",
+      role: "Software Product Manager",
+      company: "TriggerPoint Media",
+      location: "Austin, Texas",
       description:
-        "Leading engineering initiatives focused on operational excellence and team development.",
+        "Leading product strategy for 2-sided marketplace platform for digital OOH marketing.",
     },
   ];
 
   const education = [
     {
-      institution: "INSEAD",
-      program: "Executive Education",
-      year: "2005",
-      courses: [
-        "Blue Ocean Strategy",
-        "Economics of Strategy",
-        "Product Development and Innovation",
-      ],
+      institution: "AWS",
+      program: "Certified Solutions Architect – Associate",
+      year: "2025",
+      courses: [],
+    },
+    {
+      institution: "Austin Community College",
+      program: "Computer Science, Computer Programming",
+      year: "2007-2009",
+      courses: [],
     },
   ];
 
   const skills = [
-    "Engineering Leadership",
-    "Technical Strategy",
-    "Team Development",
-    "Operational Excellence",
-    "System Architecture",
-    "Cross-functional Alignment",
-    "Mentorship",
-    "Production Reliability",
+    "Software Product Management",
+    "Product Strategy & Roadmaps",
+    "SaaS Development",
+    "Payments Integration",
+    "Cross-functional Leadership",
+    "Agile/Scrum",
+    "Data-Driven Decision Making",
+    "AWS Solutions Architecture",
   ];
 
   const languages = [
     { name: "English", level: "Native" },
-    { name: "French", level: "Full Professional Proficiency" },
-    { name: "Spanish", level: "Limited Working Proficiency" },
-    { name: "Italian", level: "Limited Working Proficiency" },
+  ];
+
+  const products = [
+    {
+      name: "SignJet",
+      logo: "/img/signjet.png",
+      company: "Digital Touch Systems",
+      url: "https://signjet.com",
+    },
+    {
+      name: "SavvyDisplays",
+      logo: "/img/savvydisplays.png",
+      company: "TriggerPoint Media",
+      url: "https://savvydisplays.com",
+    },
   ];
 
   return (
@@ -56,25 +71,55 @@ export default function AboutPage() {
         {/* Bio Section */}
         <section className="mb-16">
           <p className="mb-6 text-lg leading-relaxed text-neutral-600">
-            I&apos;m an executive-level technical and business leader with a
-            track record of success in engineering leadership and operational
-            excellence. Based in Seattle, Washington, I specialize in helping
-            organizations build high-performing engineering teams and achieve
-            technical excellence.
+            I&apos;m a vision-driven Software Product Manager and technical leader
+            with proven expertise in building and scaling SaaS products. Based in
+            Austin, Texas, I specialize in aligning business strategy with
+            technical execution to deliver measurable results.
           </p>
+
+        {/* Products Section */}
+        <section className="mb-16">
+          <div className="grid gap-6 md:grid-cols-2">
+            {products.map((product, index) => (
+              <a
+                key={index}
+                href={product.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <div className="mb-4 flex h-20 items-center justify-center">
+                  <Image
+                    src={product.logo}
+                    alt={`${product.name} logo`}
+                    width={180}
+                    height={72}
+                    className="h-auto w-auto max-h-20 object-contain"
+                  />
+                </div>
+                <h3 className="mb-1 text-xl font-semibold text-center text-neutral-900">
+                  {product.name}
+                </h3>
+                <p className="text-sm font-medium text-center text-neutral-500">
+                  {product.company}
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
           <p className="mb-6 text-lg leading-relaxed text-neutral-600">
-            My expertise spans strategic engineering leadership, technical
-            systems architecture, and operational excellence. I&apos;m passionate
-            about unifying cross-functional teams, establishing quality
-            governance structures, and mentoring engineers across organizational
-            domains.
+            My expertise spans software product management, payments integration,
+            digital signage platforms, and leading cross-functional teams through
+            rapid growth. I&apos;ve increased software revenue 100x, scaled
+            deployments from 800 to 3000+ locations, and successfully integrated
+            platforms following company acquisitions.
           </p>
           <p className="text-lg leading-relaxed text-neutral-600">
-            Throughout my career, I&apos;ve focused on setting R&D objectives,
-            improving system reliability, and developing people and teams. I
-            believe that great engineering organizations are built on a
-            foundation of clear communication, continuous improvement, and a
-            commitment to excellence.
+            Throughout my career, I&apos;ve focused on launching innovative
+            products, leveraging data-driven insights, and mentoring teams to
+            achieve excellence. I believe great products are built through a
+            combination of strategic vision, technical expertise, and a deep
+            understanding of user needs.
           </p>
         </section>
       </div>

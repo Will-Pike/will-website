@@ -3,9 +3,9 @@ import ContactForm from "@/components/ContactForm";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 export const metadata: Metadata = {
-  title: "Contact | Grady Karp",
+  title: "Contact | William Pike",
   description:
-    "Get in touch with Grady Karp for consulting inquiries, speaking engagements, or to schedule a consultation.",
+    "Get in touch with William Pike for product management consulting, speaking engagements, or to schedule a consultation.",
 };
 
 export default function ContactPage() {
@@ -39,7 +39,7 @@ export default function ContactPage() {
               <ul className="space-y-3 text-neutral-600">
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/gradykarp/"
+                    href="https://www.linkedin.com/in/will-pike-6b97a413a/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center transition-colors hover:text-neutral-900"

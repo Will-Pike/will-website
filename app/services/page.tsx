@@ -3,77 +3,77 @@ import ServiceCard from "@/components/ServiceCard";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Services | Grady Karp",
+  title: "Services | William Pike",
   description:
-    "Professional consulting services in engineering leadership, technical strategy, and organizational development.",
+    "Professional consulting services in product management, technical strategy, and SaaS development.",
 };
 
 export default function ServicesPage() {
   const services = [
     {
-      title: "Executive Coaching",
+      title: "Product Management Consulting",
       description:
-        "One-on-one leadership coaching for engineering executives and aspiring leaders. Develop your leadership skills, navigate complex organizational challenges, and accelerate your career growth.",
+        "Strategic product management guidance for SaaS companies and digital platforms. Define product roadmaps, prioritize features, and align business strategy with technical execution.",
       features: [
-        "Personalized coaching sessions",
-        "Leadership style assessment",
-        "Strategic thinking development",
-        "Communication skills enhancement",
+        "Product strategy development",
+        "Roadmap planning and prioritization",
+        "User research and requirements gathering",
+        "Product-market fit assessment",
       ],
     },
     {
-      title: "Technical Strategy Consulting",
+      title: "SaaS Product Development",
       description:
-        "Help organizations define their technical direction and build roadmaps that align technology investments with business objectives.",
+        "End-to-end product development for SaaS platforms. From concept to launch, build products that scale and deliver measurable business results.",
       features: [
-        "Technology roadmap development",
-        "Architecture reviews",
-        "Build vs. buy analysis",
-        "Technical debt assessment",
+        "MVP definition and scoping",
+        "Technical architecture guidance",
+        "Agile/Scrum implementation",
+        "Launch strategy and execution",
       ],
     },
     {
-      title: "Engineering Organization Assessment",
+      title: "Payments Integration",
       description:
-        "Comprehensive evaluation of your engineering team's structure, processes, and culture. Identify strengths, opportunities, and actionable improvements.",
+        "Expert guidance on integrating payment solutions into SaaS products. Ensure seamless, secure payment flows that support your business model.",
       features: [
-        "Team structure analysis",
-        "Process evaluation",
-        "Culture assessment",
-        "Recommendations report",
+        "Payment provider selection",
+        "Integration architecture",
+        "Security and compliance",
+        "Subscription and billing strategies",
       ],
     },
     {
-      title: "Fractional CTO / VP Engineering",
+      title: "Digital Platform Strategy",
       description:
-        "Part-time executive leadership for startups and growing companies. Get experienced engineering leadership without the full-time commitment.",
+        "Strategic consulting for digital signage, marketplace platforms, and OOH marketing technology. Leverage my experience scaling platforms from startup to enterprise.",
       features: [
-        "Strategic technical direction",
-        "Team building and hiring",
-        "Process implementation",
-        "Board and investor support",
+        "Platform architecture review",
+        "Scalability planning",
+        "Multi-tenant strategies",
+        "Growth and monetization models",
+      ],
+    },
+    {
+      title: "Product Team Leadership",
+      description:
+        "Build and mentor high-performing product teams. Establish processes, tools, and culture that drive product excellence and business outcomes.",
+      features: [
+        "Team structure and hiring",
+        "Process and tooling setup",
+        "Mentoring and coaching",
+        "Cross-functional collaboration",
       ],
     },
     {
       title: "Technical Due Diligence",
       description:
-        "M&A technical assessment and risk evaluation. Understand the technical health, scalability, and risks of potential acquisitions or investments.",
+        "M&A technical assessment for SaaS products and platforms. Evaluate technical health, scalability potential, and integration risks.",
       features: [
-        "Codebase evaluation",
-        "Architecture assessment",
-        "Team capability review",
-        "Risk identification",
-      ],
-    },
-    {
-      title: "Production Reliability Consulting",
-      description:
-        "Improve system reliability and operational excellence. Implement best practices for monitoring, incident response, and continuous improvement.",
-      features: [
-        "SRE practice implementation",
-        "Incident management setup",
-        "Monitoring strategy",
-        "Post-mortem processes",
+        "Product and platform assessment",
+        "Technical debt evaluation",
+        "Scalability analysis",
+        "Integration planning",
       ],
     },
   ];
@@ -84,9 +84,10 @@ export default function ServicesPage() {
         <div className="mb-16 max-w-3xl">
           <h1 className="mb-6 text-4xl font-bold text-neutral-900">Services</h1>
           <p className="text-lg text-neutral-600">
-            I offer a range of consulting services to help organizations build
-            high-performing engineering teams and achieve technical excellence.
-            Each engagement is tailored to your specific needs and goals.
+            I offer consulting services to help organizations build successful
+            SaaS products, integrate payment solutions, and scale digital
+            platforms. Each engagement is tailored to your specific needs and
+            goals.
           </p>
         </div>
 
