@@ -57,7 +57,7 @@ export const staticProfile: StaticProfile = {
   },
 
   education: [
-    { school: "AWS", degree: "Certified Solutions Architect – Associate (2025)" },
+    { school: "AWS", degree: "Certified Solutions Architect – Associate (Obtained May 2025)" },
     { school: "Austin Community College", degree: "Computer Science, Computer Programming (2007-2009)" },
     { school: "University of Texas at San Antonio", degree: "Mechanical Engineering (2005-2007)" },
   ],

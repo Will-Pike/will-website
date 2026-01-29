@@ -18,10 +18,10 @@ export default function Header({ onOpenChat }: HeaderProps) {
   ];
 
   return (
-    <header className="border-b border-neutral-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/80 backdrop-blur-md">
       <nav className="mx-auto max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-semibold text-neutral-900">
+          <Link href="/" className="text-xl font-bold text-neutral-900 hover:text-accent-600 transition-colors">
             William Pike
           </Link>
 
@@ -32,7 +32,7 @@ export default function Header({ onOpenChat }: HeaderProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-neutral-600 transition-colors hover:text-neutral-900"
+                    className="relative text-neutral-600 font-medium transition-colors hover:text-accent-600 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent-600 after:transition-all hover:after:w-full"
                   >
                     {link.label}
                   </Link>
@@ -42,7 +42,7 @@ export default function Header({ onOpenChat }: HeaderProps) {
             {onOpenChat && (
               <button
                 onClick={onOpenChat}
-                className="flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-800 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-accent-600 to-accent-700 text-white text-sm font-medium rounded-lg hover:shadow-lg hover:scale-105 transition-all"
               >
                 <svg
                   className="w-4 h-4"
