@@ -14,9 +14,10 @@ export default function Hero() {
           </h1>
           <p className="mb-8 text-lg text-neutral-600 md:text-xl leading-relaxed">
             Software Product Manager and technical leader with a proven track record
-            in SaaS development, digital platforms, and payments integration. I help
-            organizations align business strategy with technical execution to deliver
-            measurable results and drive growth.
+            in SaaS development, recruitment technology, digital platforms, and
+            payments integration. Most recently, I led product strategy for Flo
+            Recruit&apos;s Applicant Tracking System and work allocation products, helping
+            teams align business needs with technical execution and launch-ready delivery.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link

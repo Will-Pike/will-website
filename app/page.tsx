@@ -11,9 +11,9 @@ export default function Home() {
         "Defining product roadmaps and aligning business strategy with technical execution for measurable results.",
     },
     {
-      title: "SaaS Expertise",
+      title: "SaaS & Recruitment Tech",
       description:
-        "Building and scaling SaaS platforms, from digital signage systems to marketplace platforms.",
+        "Building and scaling SaaS platforms, from digital signage and marketplace products to applicant tracking systems and work allocation tools.",
     },
     {
       title: "Growth Leadership",
@@ -23,6 +23,14 @@ export default function Home() {
   ];
 
   const products = [
+    {
+      name: "Applicant Tracking",
+      description:
+        "One platform for applications, agency submissions, interviews, feedback, and reporting on firmwide recruitment. Workflows for the unique needs of lateral attorney, partner, entry-level, and business services hiring.",
+      logo: "/img/flo-svg.svg",
+      company: "Flo Recruit",
+      url: "https://www.flo-hr.com/",
+    },
     {
       name: "SignJet",
       description:
@@ -70,7 +78,7 @@ export default function Home() {
           <h2 className="mb-12 text-center text-3xl font-bold text-neutral-900">
             Products I Worked On
           </h2>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {products.map((product, index) => (
               <a
                 key={index}
@@ -85,7 +93,7 @@ export default function Home() {
                     alt={`${product.name} logo`}
                     width={200}
                     height={80}
-                    className="h-auto w-auto max-h-24 object-contain"
+                    className={`h-auto w-auto object-contain ${product.company === "Flo Recruit" ? "max-h-[72px]" : "max-h-24"}`}
                   />
                 </div>
                 <h3 className="mb-2 text-2xl font-semibold text-neutral-900">

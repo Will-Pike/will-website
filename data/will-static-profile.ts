@@ -20,12 +20,14 @@ export const staticProfile: StaticProfile = {
   location: "Austin, TX",
   status: "Open to product management, consulting, and technical leadership opportunities",
 
-  summary: `Vision-driven change agent with proven expertise in software product management, business analysis, and software development. Exceptional track record of aligning business strategy with technical execution to deliver measurable results. Expert in payments integration, SaaS product development, and leading cross-functional teams through rapid growth and transformation.`,
+  summary: `Vision-driven product manager with 10+ years of experience across SaaS, recruitment technology, digital signage, and marketplace platforms. Skilled at translating business needs into technical product strategy, maintaining API and OpenAPI specifications, and leading cross-functional delivery across complex customer-facing systems.`,
 
   skills: {
     strong: [
       "Software Product Management",
       "Product Strategy & Roadmap Planning",
+      "Applicant Tracking Systems",
+      "OpenAPI & API Documentation",
       "SaaS Platform Development",
       "Payments Integration",
       "Cross-functional Team Leadership",
@@ -45,7 +47,7 @@ export const staticProfile: StaticProfile = {
       "DevOps & Infrastructure (Pulumi, Terraform)",
       "Product Analytics (Tableau, Splunk)",
       "Project Management Tools (JIRA, Confluence, Monday, Figma)",
-      "API Design & Integration (Postman)",
+      "API Design & Integration (OpenAPI, Postman)",
       "Monitoring & Debugging (Raygun)",
     ],
     gaps: [
@@ -75,6 +77,7 @@ export const staticProfile: StaticProfile = {
   ],
 
   suggestedQuestions: [
+    "What was William's work at Flo Recruit?",
     "How did William increase software revenue 100x at Digital Touch Systems?",
     "What's William's experience with payments integration for SaaS products?",
     "Tell me about William's work managing the acquisition and merger at TriggerPoint Media",

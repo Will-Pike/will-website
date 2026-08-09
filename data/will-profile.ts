@@ -4,13 +4,34 @@ export const willProfile = {
   location: "Austin, TX",
   status: "Open to product management, consulting, and technical leadership opportunities",
 
-  summary: `Vision-driven change agent with proven expertise in software product management, business analysis, and software development. Exceptional track record of aligning business strategy with technical execution to deliver measurable results. Expert in payments integration, SaaS product development, and leading cross-functional teams through rapid growth and transformation.`,
+  summary: `Vision-driven product manager with 10+ years of experience across SaaS, recruitment technology, digital signage, and marketplace platforms. Skilled at translating business needs into technical product strategy, maintaining API and OpenAPI specifications, and leading cross-functional delivery across complex customer-facing systems.`,
 
   experience: [
     {
+      company: "Flo Recruit",
+      role: "Product Manager - Applicant Tracking System",
+      period: "April 2026 – August 2026",
+      highlights: [
+        "Managed product strategy for Flo's recruitment and work allocation products",
+        "Maintained OpenAPI specification documents to account for new features and accelerate client adoption",
+        "Owned end-to-end product development and roadmap planning for upcoming releases",
+        "Documented and announced product releases internally and externally",
+      ],
+      aiContext: [{
+        situation:
+          "Flo Recruit needed a product manager to guide strategy and release readiness for recruitment and work allocation solutions",
+        approach:
+          "End-to-end product ownership, API documentation discipline, and clear release communication across stakeholders",
+        technicalWork:
+          "Applicant Tracking System, recruitment workflows, OpenAPI specification management, product releases",
+        lessonsLearned:
+          "Strong product operations and documentation reduce adoption friction and improve stakeholder alignment across release cycles",
+      }],
+    },
+    {
       company: "TriggerPoint Media",
       role: "Software Product Manager",
-      period: "December 2022 – Present",
+      period: "December 2022 – April 2026",
       highlights: [
         "Product Strategy lead for 2-sided marketplace platform for digital OOH marketing (SavvyDisplays)",
         "Launched new product enabling businesses to monetize digital marketing strategies",
@@ -103,6 +124,8 @@ export const willProfile = {
     strong: [
       "Software Product Management",
       "Product Strategy & Roadmap Planning",
+      "Applicant Tracking Systems",
+      "OpenAPI & API Documentation",
       "SaaS Platform Development",
       "Payments Integration",
       "Cross-functional Team Leadership",
@@ -122,7 +145,7 @@ export const willProfile = {
       "DevOps & Infrastructure (Pulumi, Terraform)",
       "Product Analytics (Tableau, Splunk)",
       "Project Management Tools (JIRA, Confluence, Monday, Figma)",
-      "API Design & Integration (Postman)",
+      "API Design & Integration (OpenAPI, Postman)",
       "Monitoring & Debugging (Raygun)",
     ],
     gaps: [
@@ -140,6 +163,7 @@ export const willProfile = {
   ],
 
   suggestedQuestions: [
+    "What was William's work at Flo Recruit?",
     "How did William increase software revenue 100x at Digital Touch Systems?",
     "What's William's experience with payments integration for SaaS products?",
     "Tell me about William's work managing the acquisition and merger at TriggerPoint Media",

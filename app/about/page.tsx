@@ -10,11 +10,18 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const experience = [
     {
+      role: "Product Manager - Applicant Tracking System",
+      company: "Flo Recruit",
+      location: "Austin, Texas",
+      description:
+        "Managed product strategy for recruitment and work allocation products while maintaining OpenAPI docs and roadmap planning.",
+    },
+    {
       role: "Software Product Manager",
       company: "TriggerPoint Media",
       location: "Austin, Texas",
       description:
-        "Leading product strategy for 2-sided marketplace platform for digital OOH marketing.",
+        "Led product strategy for a 2-sided marketplace platform for digital OOH marketing and helped streamline post-acquisition platform integration.",
     },
   ];
 
@@ -50,6 +57,12 @@ export default function AboutPage() {
 
   const products = [
     {
+      name: "Applicant Tracking",
+      logo: "/img/flo-svg.svg",
+      company: "Flo Recruit",
+      url: "https://www.flo-hr.com/",
+    },
+    {
       name: "SignJet",
       logo: "/img/signjet.png",
       company: "Digital Touch Systems",
@@ -84,16 +97,16 @@ export default function AboutPage() {
             <div className="flex-1">
               <p className="mb-6 text-lg leading-relaxed text-neutral-600">
                 I&apos;m a vision-driven Software Product Manager and technical leader
-                with proven expertise in building and scaling SaaS products. Based in
-                Austin, Texas, I specialize in aligning business strategy with
-                technical execution to deliver measurable results.
+                with proven expertise in building and scaling SaaS and recruitment
+                technology products. Based in Austin, Texas, I specialize in aligning
+                business strategy with technical execution to deliver measurable results.
               </p>
               <p className="mb-6 text-lg leading-relaxed text-neutral-600">
-                My expertise spans software product management, payments integration,
-                digital signage platforms, and leading cross-functional teams through
-                rapid growth. I&apos;ve increased software revenue 100x, scaled
-                deployments from 800 to 3000+ locations, and successfully integrated
-                platforms following company acquisitions.
+                Most recently, I managed product strategy for Flo Recruit&apos;s Applicant
+                Tracking System and related work allocation products, helping maintain
+                OpenAPI documentation and release readiness while supporting client
+                adoption. My broader experience spans payments integration, digital
+                signage platforms, and leading cross-functional teams through rapid growth.
               </p>
             </div>
           </div>
@@ -123,7 +136,7 @@ export default function AboutPage() {
                     alt={`${product.name} logo`}
                     width={180}
                     height={72}
-                    className="h-auto w-auto max-h-20 object-contain"
+                    className={`h-auto w-auto object-contain ${product.company === "Flo Recruit" ? "max-h-[60px]" : "max-h-20"}`}
                   />
                 </div>
                 <h3 className="mb-1 text-xl font-semibold text-center text-neutral-900">
