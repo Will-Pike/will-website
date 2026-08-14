@@ -25,6 +25,11 @@ export async function POST(req: Request) {
     }
 
     const systemPrompt = await buildSystemPrompt();
+    const modelId = process.env.ANTHROPIC_MODEL || "claude-haiku-4-5-20251001";
+
+    if (!process.env.ANTHROPIC_API_KEY) {
+      return new Response("Anthropic API key is not configured", { status: 500 });
+    }
 
     // Convert UIMessage format (parts array) to ModelMessage format (content)
     const modelMessages = await convertToModelMessages(messages as UIMessage[]);
@@ -38,7 +43,7 @@ export async function POST(req: Request) {
     );
 
     const result = streamText({
-      model: anthropic("claude-sonnet-4-20250514"),
+      model: anthropic(modelId),
       system: systemPrompt,
       messages: modelMessages,
       maxOutputTokens: 1024,
@@ -64,6 +69,13 @@ export async function POST(req: Request) {
       return new Response("Rate limit exceeded. Please try again later.", {
         status: 429,
       });
+    }
+
+    if (error instanceof Error && error.message.includes("model")) {
+      return new Response(
+        "The selected Anthropic model is unavailable. Please verify the API key and model access on the server.",
+        { status: 502 }
+      );
     }
 
     return new Response("Internal server error", { status: 500 });
