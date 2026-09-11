@@ -110,13 +110,6 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <p className="text-lg leading-relaxed text-neutral-600">
-            Throughout my career, I&apos;ve focused on launching innovative
-            products, leveraging data-driven insights, and mentoring teams to
-            achieve excellence. I believe great products are built through a
-            combination of strategic vision, technical expertise, and a deep
-            understanding of user needs.
-          </p>
         </section>
 
         {/* Products Section */}
