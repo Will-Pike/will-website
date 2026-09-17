@@ -29,7 +29,7 @@ export default function Home() {
         "One platform for applications, agency submissions, interviews, feedback, and reporting on firmwide recruitment. Workflows for the unique needs of lateral attorney, partner, entry-level, and business services hiring.",
       logo: "/img/flo-svg.svg",
       company: "Flo Recruit",
-      url: "https://www.flo-hr.com/",
+      url: "https://www.joinflo.com/",
     },
     {
       name: "SignJet",

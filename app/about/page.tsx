@@ -60,7 +60,7 @@ export default function AboutPage() {
       name: "Applicant Tracking",
       logo: "/img/flo-svg.svg",
       company: "Flo Recruit",
-      url: "https://www.flo-hr.com/",
+      url: "https://www.joinflo.com/",
     },
     {
       name: "SignJet",
