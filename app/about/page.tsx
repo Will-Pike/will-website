@@ -161,8 +161,15 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* AWS Certification Badge */}
-        <section className="flex justify-center pt-8">
+        {/* AWS Certification Badges */}
+        <section className="flex justify-center gap-8 pt-8">
+          <Image
+            src="/img/aws-aip-badge.png"
+            alt="AWS Certified AI Practitioner"
+            width={150}
+            height={150}
+            className="w-[150px] h-auto"
+          />
           <a
             href="https://www.credly.com/badges/018c7256-1a42-46a2-bcaa-a7987d4c6d2d"
             target="_blank"
