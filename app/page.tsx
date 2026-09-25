@@ -70,6 +70,29 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <section className="flex justify-center gap-8 pt-8">
+            <Image
+              src="/img/aws-aip-badge.png"
+              alt="AWS Certified AI Practitioner"
+              width={150}
+              height={150}
+              className="w-[150px] h-auto"
+            />
+            <a
+              href="https://www.credly.com/badges/018c7256-1a42-46a2-bcaa-a7987d4c6d2d"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover-lift inline-block"
+            >
+              <Image
+                src="/img/aws-saa-badge.png"
+                alt="AWS Certified Solutions Architect - Associate"
+                width={150}
+                height={150}
+                className="w-[150px] h-auto"
+              />
+            </a>
+          </section>
         </div>
       </section>
 
